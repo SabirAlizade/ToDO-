@@ -6,7 +6,7 @@
 //
 
 import UIKit
-class DashBoardCell: BaseCell {
+class CustomCell: BaseCell {
     
     var item: TaskModel? {
         didSet {
@@ -65,7 +65,7 @@ class DashBoardCell: BaseCell {
             noteLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -16),
             
             timeLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
-            timeLabel.topAnchor.constraint(equalTo: titleLabel.topAnchor, constant: 0),
+            timeLabel.topAnchor.constraint(equalTo: titleLabel.topAnchor),
             timeLabel.heightAnchor.constraint(equalToConstant: 50),
         ])
     }

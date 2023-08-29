@@ -19,7 +19,7 @@ class DashboardVC:  UIViewController {
         let view = UITableView()
         view.delegate = self
         view.dataSource = self
-        view.register(DashBoardCell.self, forCellReuseIdentifier: DashBoardCell.description())
+        view.register(CustomCell.self, forCellReuseIdentifier: CustomCell.description())
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -27,7 +27,7 @@ class DashboardVC:  UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        title = "Dashboard"
+        title = "ToDO"
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(didTapCreate))
         
@@ -58,7 +58,7 @@ extension DashboardVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: DashBoardCell.description(), for: indexPath) as? DashBoardCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: CustomCell.description(), for: indexPath) as? CustomCell {
             cell.item = viewModel.data[indexPath.row]
             return cell
         }
